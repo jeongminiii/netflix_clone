@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_clone/screen/home_screen.dart';
 import 'package:netflix_clone/widget/bottom_bar.dart';
 
 void main() => runApp(const MyApp());
@@ -28,13 +29,25 @@ class _MyAppState extends State<MyApp> {
         length: 4, //메뉴 개수
         child: Scaffold(
           body: TabBarView(
-            //사용자가 직접 스크롤하는 것을 막는 코드
             physics: const NeverScrollableScrollPhysics(),
+            //사용자가 직접 스크롤하는 것을 막는 코드
             children: <Widget>[
-              Container(),
-              Container(),
-              Container(),
-              Container(),
+              const HomeScreen(),
+              Container(
+                child: const Center(
+                  child: Text('2'),
+                ),
+              ),
+              Container(
+                child: const Center(
+                  child: Text('3'),
+                ),
+              ),
+              Container(
+                child: const Center(
+                  child: Text('4'),
+                ),
+              ),
             ],
           ),
           bottomNavigationBar: const Bottom(),
